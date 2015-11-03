@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+<p>
+  <b>Dateofbirth:</b>
+  <%= @user.dateofbirth %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @user.gender %>
+</p>
+
+<p>
+  <b>User Picture: </b>
+  <%= image_tag(@user.picture, :size => "50x50") %>
+</p>
+
+
+<%= link_to 'Edit User Details', edit_user_path(@user), class: "btn btn-small btn-primary" %> |
+<%= link_to 'Open New Shopping Cart', new_cart_path, class: "btn btn-small btn-primary" %>

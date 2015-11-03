@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PC Sports Rugby</title>
+  <%= favicon_link_tag 'favicon.ico' %>
+
+  <%= stylesheet_link_tag  "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css",  "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+ 
+ <%= csrf_meta_tags %> 
+</head>
+<body>
+
+
+<%= render 'layouts/header' %>
+		  
+		  
+
+<div class="center jumbotron">
+</br></br></br></br>
+<%= yield %>
+<%= render 'layouts/footer' %>
+</div>
+
+
+</body>
+
+</html>
+</html>

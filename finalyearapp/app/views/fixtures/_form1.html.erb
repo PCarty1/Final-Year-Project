@@ -1,0 +1,34 @@
+<%= form_for(@fixture) do |f| %>
+  <% if @fixture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fixture.errors.count, "error") %> prohibited this fixture from being saved:</h2>
+
+      <ul>
+      <% @fixture.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+  <div class="field">
+    <%= f.label :winningscore %><br />
+    <%= f.number_field :winningscore %>
+  </div>
+  <div class="field">
+    <%= f.label :losingscore %><br />
+    <%= f.number_field :losingscore %>
+  </div>
+  <div class="field">
+    <%= f.label :winningteam_id %><br />
+	<%= f.collection_select	:winningteam_id, [@hometeam, @awayteam], :id, :name %> 
+  </div>
+  <div class="field">
+    <%= f.label :report %><br />
+    <%= f.text_field :report %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

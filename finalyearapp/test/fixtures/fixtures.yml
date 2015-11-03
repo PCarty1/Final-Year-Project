@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  datetime: 2014-11-21 22:45:46
+  winningscore: 1
+  losingscore: 1
+  hometeam_id: 1
+  awayteam_id: 1
+  winningteam_id: 1
+  report: MyText
+  venue: MyString
+  competition_id: 1
+
+two:
+  datetime: 2014-11-21 22:45:46
+  winningscore: 1
+  losingscore: 1
+  hometeam_id: 1
+  awayteam_id: 1
+  winningteam_id: 1
+  report: MyText
+  venue: MyString
+  competition_id: 1

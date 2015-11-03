@@ -1,0 +1,49 @@
+<%= form_for(@fixture) do |f| %>
+  <% if @fixture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fixture.errors.count, "error") %> prohibited this fixture from being saved:</h2>
+
+      <ul>
+      <% @fixture.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  
+  <div class="field">
+    <%= f.label "Competition" %><br />
+	<%= @competition.name %> 
+  </div>
+  <% if !@teamsInComp.empty? %>
+ <div class="field">
+    <%= f.label :hometeam %><br />
+	<%= f.collection_select :hometeam_id, @teamsInComp.all, :id, :name %><br />
+    <%= f.label :awayteam %><br />
+	<%= f.collection_select :awayteam_id, @teamsInComp.all, :id, :name %><br />
+	<div class="field">
+    <%= f.label :datetime %><br />
+    <%= f.text_field :datetime, id: :datepicker  %>
+  </div>
+  <div class="field"> Time
+    <%= f.label :datetime %><br />
+    <%= f.time_select :datetime %>
+  </div>
+   <div class="field"> Time
+    <%= f.label :datetime %><br />
+    <%= f.time_select :datetime%>
+  </div>
+  <div class="field">
+    <%= f.label :venue %><br />
+     <%= f.select :venue,["Pitch 1", "Pitch 2", "Pitch 3", "Pitch 4", "Pitch 5", "Alternate Pitch"] %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  </div>
+  <% else %>
+	<p>There are no teams entered in this competition </p>
+  <% end %>
+<% end %>

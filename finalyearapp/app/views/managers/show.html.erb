@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @manager.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @manager.address %>
+</p>
+
+<p>
+  <b>Date Of Birth:</b>
+  <%= @manager.dateofbirth.strftime "%m %b %Y" %>
+</p>
+
+<p>
+  <b>Contract:</b>
+  <%= @manager.contract %> seasons
+</p>
+
+<p>
+  <b>Years Experience:</b>
+  <%= @manager.yearsexperience %> yrs
+</p>
+
+<p>
+  <b>Nationality:</b>
+  <%= @manager.nationality %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @manager.phone %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @manager.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_manager_path(@manager), class: "btn btn-small btn-primary" %>
+

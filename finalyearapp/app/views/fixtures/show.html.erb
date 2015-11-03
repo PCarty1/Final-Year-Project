@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Competition:</b>
+  <%= @fixture.competition.name %>
+</p>
+<p>
+  <b>Datetime:</b>
+  <%= @fixture.datetime %>
+</p>
+<p>
+  <b>Hometeam:</b>
+  <%= @fixture.hometeam.name %>
+</p>
+
+<p>
+  <b>Awayteam:</b>
+  <%= @fixture.awayteam.name %>
+</p>
+
+<p>
+  <b>Venue:</b>
+  <%= @fixture.venue %>
+</p>
+<% if @fixture.winningscore.to_i != 0 %>
+<p>
+  <b>Winningscore:</b>
+  <%= @fixture.winningscore %>
+</p>
+
+<p>
+  <b>Losingscore:</b>
+  <%= @fixture.losingscore %>
+</p>
+<p>
+  <b>Winningteam:</b>
+  <%= @fixture.winningteam.name %>
+</p>
+
+<p>
+  <b>Report:</b>
+  <%= @fixture.report %>
+</p>
+<% else %>
+<p>This Fixture has not been played yet </p>
+<%= link_to 'Add a Result', edit_fixture_path(@fixture), class: "btn btn-small btn-primary" %>
+<% end %>

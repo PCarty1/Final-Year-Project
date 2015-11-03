@@ -1,0 +1,31 @@
+<table class="table table-bordered table-condensed">
+
+<h3>Show Clubs Teams</h3>
+
+        <%= @club.name %>
+		
+		
+<% if !@teams.empty? %>
+<tr>
+	<th>Team Name</th>
+	<th>Level</th>
+	<th>Manager</th>
+	<th>Kit Image</th>
+   </tr>
+   
+   
+ <% @teams.each do |f| %>
+  <tr>
+	<td><%= f.name %></td>
+	<td><%= f.level %></td>
+	<td><%= f.manager.name %></td>
+	<td><%= image_tag(f.kit_image, :size => "50x50") %></td> 
+    </tr>
+  <% end %>
+  
+  <% else %>
+  </br></br>
+  <p>There are no Teams in this club</p>
+  <% end %>
+
+</table>

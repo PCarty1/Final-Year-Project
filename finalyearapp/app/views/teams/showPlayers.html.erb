@@ -1,0 +1,40 @@
+<table class="table table-bordered">
+
+<h3>Show Teams Players</h3>
+
+        <%= @team.name %>
+		
+		
+<% if !@players.empty? %>
+ 
+  <tr>
+    <th>Player</th>
+	<th>Name</th>
+	<th>Address</th>
+	<th>Position</th>
+	<th>Squad Number</th>
+	<th>Date Of Birth</th>
+	<th>Phone</th>
+	<th>Email</th>
+   </tr>
+   
+   
+ <% @players.each do |f| %>
+<tr>
+ 
+  <td><%= f.id %></td>
+	<td><%= f.name %></td>
+	<td><%= f.address %></td>
+	<td><%= f.position %></td>
+	<td><%= f.squadnumber %></td>
+	<td><%= f.dateofbirth %></td>
+	<td><%= f.email %></td>
+	<td><%= f.phone %></td>
+    </tr>
+  <% end %>
+  <% else %>
+  </br></br>
+  <p>There are no players</p>
+  <% end %>
+
+</table>

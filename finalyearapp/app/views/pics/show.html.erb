@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+<h3><i>View Match Picture</i></h3></nr>
+<p>
+  <b>Name:</b>
+  <%= @pic.name %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= image_tag(@pic.image, :size => "200x200") %>
+</p>
+
+<p>
+  <b>Feeling:</b>
+  <%= @pic.feeling %>
+</p>
+
+<p>
+  <b> Location:</b>
+  <%= @pic.location %>
+</p>
+
+</br>
+    
+    <p><%= link_to 'Edit', edit_pic_path(@pic), class: "btn btn-default" %></p>

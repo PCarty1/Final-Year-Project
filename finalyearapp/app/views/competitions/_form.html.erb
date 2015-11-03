@@ -1,0 +1,41 @@
+<%= form_for(@competition) do |f| %>
+  <% if @competition.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@competition.errors.count, "error") %> prohibited this competition from being saved:</h2>
+
+      <ul>
+      <% @competition.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :entry_fee %><br />
+    <%= f.text_field :entry_fee %>
+  </div>
+  <div class="field">
+    <%= f.label :rules %><br />
+    <%= f.text_area :rules, :size => "20x5" %>
+  </div>
+  <div class="dropdown">
+    <%= f.label :level %><br />
+	<%= f.select :level,["First Team", "U21's", "U18's", "U16's", "Minors"] %>
+  </div>
+  <div class="field">
+    <%= f.label :prize %><br />
+    <%= f.text_field :prize %>
+  </div>
+  <div class="field"> Sponsor
+    <%= f.label :sponsor if @competition.sponsor? %><br />
+    <%= f.file_field :sponsor %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

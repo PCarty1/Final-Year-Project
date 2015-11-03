@@ -1,0 +1,47 @@
+<h1>Listing Players</h1>
+
+
+<%= will_paginate @players, renderer: BootstrapPagination::Rails %>
+
+<table class="table table-condensed">
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Email</th>
+    <th>Mobile</th>
+    <th>Dateofbirth</th>
+    <th>Gender</th>
+    <th>Squadnumber</th>
+    <th>Position</th>
+    <th>Height</th>
+    <th>Weight</th>
+    <th>Team</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @players.each do |player| %>
+  <tr>
+    <td><%= player.name %></td>
+    <td><%= player.address %></td>
+    <td><%= player.email %></td>
+    <td><%= player.phone %></td>
+    <td><%= player.dateofbirth.strftime "%m %b %Y" %></td>
+    <td><%= player.gender %></td>
+    <td><%= player.squadnumber %></td>
+    <td><%= player.position %></td>
+    <td><%= player.height %></td>
+    <td><%= player.weight %></td>
+    <td><%= player.team.name %></td>
+    <td><%= link_to 'Show', player, class: "btn btn-default" %></td>
+    <td><%= link_to 'Edit', edit_player_path(player), class: "btn btn-default" %></td>
+    <td><%= link_to 'Delete Player', player, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></td>
+  </tr>
+  
+<% end %>
+</table>
+
+<br />
+
+<%= link_to ' Add A New Player', new_player_path, class: "btn btn-small btn-primary" %>

@@ -1,0 +1,40 @@
+<h1>List of Managers</h1>
+
+
+<%= will_paginate @managers, renderer: BootstrapPagination::Rails %>
+
+<table class="table table-condensed">
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Dateofbirth</th>
+    <th>Contract</th>
+    <th>Yearsexperience</th>
+    <th>Nationality</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @managers.each do |manager| %>
+  <tr>
+    <td><%= manager.name %></td>
+    <td><%= manager.address %></td>
+    <td><%= manager.dateofbirth.strftime "%m %b %Y" %></td>
+    <td><%= manager.contract %> seasons </td>
+    <td><%= manager.yearsexperience %> yrs</td> 
+    <td><%= manager.nationality %></td>
+    <td><%= manager.phone %></td>
+    <td><%= manager.email %></td>
+    <td><%= link_to 'Show', manager, class: "btn btn-default" %></td>
+    <td><%= link_to 'Edit', edit_manager_path(manager), class: "btn btn-default" %></td>
+    <td><%= link_to 'Remove Manager', manager, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Manager', new_manager_path, class: "btn btn-small btn-primary" %> 

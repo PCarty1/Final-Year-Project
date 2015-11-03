@@ -1,0 +1,36 @@
+<h1>Listing Teams</h1>
+
+
+<%= will_paginate @teams, renderer: BootstrapPagination::Rails %>
+
+<table class="table table-condensed">
+  <tr>
+    <th>Name</th>
+    <th>Level</th>
+    <th>Kit image</th>
+    <th>Manager</th>
+    <th>Club</th>
+    <th>Competition</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @teams.each do |team| %>
+  <tr>
+    <td><%= team.name %></td>
+    <td><%= team.level %></td>
+    <td><%= image_tag(team.kit_image, :size => "50x50") %></td>
+    <td><%= team.manager.name %></td>
+    <td><%= team.club.name %></td>
+    <td><%= team.competition.name	%></td>
+    <td><%= link_to 'Show', team, class: "btn btn-default" %></td>
+    <td><%= link_to 'Edit', edit_team_path(team), class: "btn btn-default" %></td>
+    <td><%= link_to 'Delete Team', team, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Create New Team', new_team_path, class: "btn btn-small btn-primary" %>

@@ -1,0 +1,27 @@
+<table id="dynamictable" class="table table-bordered table-condensed">
+<h3><i>Leaderboard</i></h3>
+
+<thead>
+<% if !@compTeams.empty? %>
+<tr>
+	<th><%= sortable "Team" %></th>
+	<th><%= sortable "Points" %></th>
+	</tr>
+	
+</thead>
+<tbody>
+ <% @compTeams.sort_by { |a| [a.points]}.reverse_each.each do |f| %>
+	<tr align="left">
+	<td><%= f.name %></td>
+    <td><%= f.points %></td>
+	</tr>
+	
+  <% end %>
+  <% else %>
+	</br></br>
+	<p>There are no teams for this competition</p>
+  <% end %>
+  
+</tbody>
+</table>
+  

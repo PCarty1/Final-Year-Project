@@ -1,0 +1,43 @@
+<table id="dynamictable" class="table table-bordered table-condensed">
+
+<h3>Comp Fixture Results </h3>
+
+        <%= @competition.name %>
+ 
+ 
+<% if !@fixtures.empty? %>
+  <tr>
+	<th>Home Team</th>
+	<th>Away Team</th>
+   <th>Winning Score</th>
+   <th>Losing Score</th>
+   <th>Winning Team </th>
+   </tr>
+   
+   
+ <% @fixtures.each do |f| %>
+  <tr align="left">
+	<td>
+	<li><a title="Home Team Details  ->  HomeTeam Name:  <%= f.hometeam.name %>,  Level: <%= f.hometeam.level %>,  Points: <%= f.hometeam.points %>,   Manager: <%= f.hometeam.manager.name %> ">
+	<%= f.hometeam.name %></a></li>
+	
+	
+	<td><li><a title="Away Team Details  ->  AwayTeam Name:  <%= f.awayteam.name %>,  Level: <%= f.awayteam.level %>,  Points: <%= f.hometeam.points %>,   Manager: <%= f.awayteam.manager.name %> ">
+	<%= f.awayteam.name %></a></li>
+	
+	
+   <td><%= f.winningscore %></td>
+   <td><%= f.losingscore %></td>
+	<td><%= f.winningteam.name %></td>
+	
+    </tr>
+  <% end %>
+  <% else %>
+	</br></br>
+	<p>There are no fixtures for this competition</p>
+  <% end %>
+  
+  </table>
+  
+  
+<%= link_to 'View Competition Leaderboard', showleaderboard_path(competition_id: @competition), class: "btn btn-small btn-primary" %>

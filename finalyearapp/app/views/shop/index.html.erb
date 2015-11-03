@@ -1,0 +1,21 @@
+<% if notice %>
+	<p id="notice"><%= notice %></p>
+<% end %>
+</br>
+<%= image_tag("Cart.png", :size => "150x105") %>
+<h1>Products listed for Sale</h1>
+<% if !@products.empty? %>
+	<% @products.each do |product| %>	
+		<%= image_tag(product.image, :size => "50x50") %>
+		<h3><%= product.title %></h3>
+		<%= sanitize(product.description) %>
+		<%= euro(product.price) %>
+		<%= button_to 'Add to Cart', lineitems_path(product_id: product), remote: true %> </br>	
+		
+	<% end %>
+<% else %>
+	<p>There are no products for sale</p>
+<% end %>
+
+		<%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+

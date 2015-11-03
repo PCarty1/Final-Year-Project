@@ -1,0 +1,32 @@
+<h1><i>Matchday Image Gallery</i></h1>
+
+
+<%= will_paginate @pics, renderer: BootstrapPagination::Rails %>
+
+
+<table class="table table-condensed">
+  <tr>
+    <th>Name</th>
+    <th>Image</th>
+    <th>Feeling</th>
+    <th>Location</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pics.each do |pic| %>
+  <tr>
+    <td><%= pic.name %></td>
+    <td><%= image_tag(pic.image, :size => "90x90") %></td>
+    <td><%= pic.feeling %></td>
+    <td><%= pic.location %></td>
+    <td><%= link_to 'View Pic', pic, class: "btn btn-default" %></td>
+    <td><%= link_to 'Remove Pic', pic, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pic', new_pic_path, class: "btn btn-default" %>

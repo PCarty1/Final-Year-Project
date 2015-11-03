@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @team.name %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @team.level %>
+</p>
+
+<p>
+  <b>Kit image:</b>
+  <%= image_tag(@team.kit_image, :size => "50x50") %>
+</p>
+
+<p>
+  <b>Manager:</b>
+  <%= @team.manager.name %>
+</p>
+
+<p>
+  <b>Club:</b>
+  <%= @team.club.name %>
+</p>
+
+<p>
+  <b>Competition:</b>
+  <%= @team.competition.name %>
+</p>
+
+<p>
+  <b>Points:</b>
+  <%= @team.points%>
+</p>
+
+
+<%= link_to 'Edit', edit_team_path(@team), class: "btn btn-small btn-primary" %> |
+<%= link_to "Show Manager", showmanagers_path(team_id: @team), class: "btn btn-small btn-primary" %> |
+<%= link_to "Show Players", showplayers_path(team_id: @team), class: "btn btn-small btn-primary" %>
+

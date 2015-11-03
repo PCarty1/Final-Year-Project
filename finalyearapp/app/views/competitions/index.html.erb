@@ -1,0 +1,36 @@
+<h1>Current Competitions</h1>
+
+
+<%= will_paginate @competitions, renderer: BootstrapPagination::Rails %>
+
+<table class="table table-condensed">
+  <tr>
+    <th>Name</th>
+    <th>Entryfee</th>
+    <th>Rules</th>
+    <th>Level</th>
+    <th>Prize</th>
+    <th>Sponsor</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @competitions.each do |competition| %>
+  <tr>
+    <td><%= competition.name %></td>
+    <td><%= euro(competition.entry_fee) %></td>
+    <td><%= competition.rules %></td>
+    <td><%= competition.level %></td>
+    <td><%= competition.prize %></td>
+    <td><%= image_tag(competition.sponsor, :size => "50x50") %> </td>
+    <td><%= link_to 'Show', competition, class: "btn btn-default" %></td>
+    <td><%= link_to 'Edit', edit_competition_path(competition), class: "btn btn-default" %></td>
+    <td><%= link_to 'Delete Comp', competition, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Competition', new_competition_path, class: "btn btn-small btn-primary" %>

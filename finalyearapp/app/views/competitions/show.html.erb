@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @competition.name %>
+</p>
+
+<p>
+  <b>Entryfee:</b>
+  <%= euro(@competition.entry_fee) %>
+</p>
+
+<p>
+  <b>Rules:</b>
+  <%= @competition.rules %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @competition.level %>
+</p>
+
+<p>
+  <b>Prize:</b>
+  <%= @competition.prize %>
+</p>
+
+<p>
+  <b>Sponsor:</b>
+  <%= image_tag(@competition.sponsor, :size => "50x50") %>
+</p>
+
+
+<%= link_to 'Create Competition Fixture', new_fixture_path(competition_id: @competition), class: "btn btn-small btn-primary" %>
+<%= link_to 'Edit Competition', edit_competition_path(@competition), class: "btn btn-small btn-primary" %>  </br></br>
+<%= link_to 'View Competition Leaderboard', showleaderboard_path(competition_id: @competition), class: "btn btn-small btn-primary" %> |
+<%= link_to 'Show Fixtures', showfixtures_path(competition_id: @competition), class: "btn btn-small btn-primary" %> 

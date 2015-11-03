@@ -1,0 +1,39 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <notice class="navbar navbar-fixed-top">
+			<div id="banner">
+				<%= image_tag("RugbyBall.jpg", :size => "150x105") %>
+				<font size="5" color="#CCFFFF"><i><%= @page_title || "PC Rugby Web App " %></i></font>
+			
+	
+	 <div class="navbar-collapse collapse navbar-right">
+		<ul class="nav">
+				<li class="active"><%= link_to "HOME", 'http://localhost:3000' %></li
+					<% if !signed_in? %> |
+				<li><%= link_to "Sign In", signin_path %></li>		
+					<% else %>
+				<li>Signed in as <%= @current_user.name %></li>
+				<li><%= link_to "Sign Out", signout_path %></li>
+			<%end %>
+			
+		<li><%= link_to "Help", 'http://localhost:3000/pages/help' %></li>
+		<div class="btn-group navbar-collapse collapse navbar-right">
+    <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle">Site Menu <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+	<li><%= link_to "Teams",  teams_path%></li>
+        <li><%= link_to "Players", players_path%></li>
+        <li><%= link_to "Managers", managers_path%></li>
+        
+    </ul>
+</div>
+        </ul>
+		</nav>
+		</div> 
+		
+		
+		
+		
+		
+
+		</div>
+    </notice>
+	</header>

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @order.user_id %>
+</p>
+
+<p>
+  <b>Paymethod:</b>
+  <%= @order.paymethod %>
+</p>
+
+<p>
+  <b>Total:</b>
+  <%= @order.total %>
+</p>
+
+
+<%= link_to 'Edit', edit_order_path(@order), class: "btn btn-small btn-primary" %> |
+<%= link_to 'Back', orders_path, class: "btn btn-small btn-primary" %>

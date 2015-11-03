@@ -1,0 +1,34 @@
+<%= form_for(@pic) do |f| %>
+  <% if @pic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pic.errors.count, "error") %> prohibited this pic from being saved:</h2>
+
+      <ul>
+      <% @pic.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :image if @pic.image? %><br />
+    <%= f.file_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :feeling %><br />
+	<%= f.select :feeling, ["Happy", "Delighted", "Proud", "Overjoyed", "Dissapointed", "Exhausted"] %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br />
+	<%= f.select :location, ["Stand", "Pitchside", "Bench", "Fan Section", "Hill View"] %>
+
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

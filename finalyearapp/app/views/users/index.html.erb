@@ -1,0 +1,36 @@
+<h1>Listing users</h1>
+
+
+<%= will_paginate @users, renderer: BootstrapPagination::Rails %>
+
+<table class="table table-condensed">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Dateofbirth</th>
+    <th>Gender</th>
+	<th>User Picture</th>
+    <th>Password digest</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.email %></td>
+    <td><%= user.dateofbirth %></td>
+    <td><%= user.gender %></td>
+    <td><%= image_tag(user.picture, :size => "50x50") %></td>
+    <td>xxxx</td>
+    <td><%= link_to 'Show', user, class: "btn btn-default" %></td>
+    <td><%= link_to 'Edit', edit_user_path(user), class: "btn btn-default" %></td>
+    <td><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User', new_user_path, class: "btn btn-small btn-primary" %>

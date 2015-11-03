@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<i><h4>Club</h4><i></br>
+
+
+<p>
+  <b>Name:</b>
+  <%= @club.name %>
+</p>
+
+<p>
+  <b>Homeground:</b>
+  <%= @club.homeground %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @club.location %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @club.email %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @club.phone %>
+</p>
+
+<p>
+  <b>Crest:</b>
+  <%= image_tag(@club.crest, :size => "50x50") %>
+</p>
+
+<p>
+  <b>Info:</b>
+  <%= @club.info %>
+</p>
+
+
+<%= link_to 'Edit Club', edit_club_path(@club), class: "btn btn-small btn-primary" %> |
+<%= link_to "Show Teams", showteams_path(club_id: @club), class: "btn btn-small btn-primary" %>
+

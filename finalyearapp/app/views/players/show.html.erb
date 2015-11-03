@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @player.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @player.address %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @player.email %>
+</p>
+
+<p>
+  <b>Mobile:</b>
+  <%= @player.phone %>
+</p>
+
+<p>
+  <b>Date Of Birth:</b>
+  <%= @player.dateofbirth.strftime "%m %b %Y" %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @player.gender %>
+</p>
+
+<p>
+  <b>Squad Number:</b>
+  <%= @player.squadnumber %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @player.position %>
+</p>
+
+<p>
+  <b>Height:</b>
+  <%= @player.height %>
+</p>
+
+<p>
+  <b>Weight:</b>
+  <%= @player.weight %>
+</p>
+
+<p>
+  <b>Team:</b>
+  <%= @player.team.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_player_path(@player), class: "btn btn-small btn-primary" %> |
+<%= link_to "Show Players Team", showplayersteam_path(player_id: @player), class: "btn btn-small btn-primary" %>

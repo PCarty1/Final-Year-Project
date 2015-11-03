@@ -1,0 +1,12 @@
+<table class="table table-striped">
+  <% @fixtures.each do |fixture| %>
+<tr>
+      <td>
+        <%= "#{fixture.hometeam_id #{fixture.awayteam_id}" %>
+      </td>
+  <td>
+    Competition: <%= @fixture.competition[:name] %>
+  </td> 
+    </tr>
+  <% end %>
+</table>
